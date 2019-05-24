@@ -9,7 +9,7 @@ from search import *
 from utils import print_table
 
 class QLearningAgentUofG:
-    """ Here we define a model free approach for our reinforcement learning agent. We use Q-learning for this, 
+    """ Here a model free approach for our reinforcement learning agent will be defined. Q-learning is used for this, 
         which maximizes the EV of the total reward over all iterations and finds a policy based on it. Q-learning 
         involves a stochastic environment, but since the agent "learns" over time through exploration, with increasing 
         number of episodes actions are taken more informed (deterministic). It uses Q-value iteration in an temporal 
@@ -74,13 +74,13 @@ class QLearningAgentUofG:
         assumes the percept to be of type (state, reward)."""
         return percept
 
-# We define the reinforcement agent and apply it to all task environment ID's
+# Define the reinforcement agent and apply it to all task environment ID's
 def rl_agent(problem_id):
 
-    # we select small negative rewards for the RL-Agent to create an incenctive to learn
+    # select small negative rewards for the RL-Agent to create an incenctive to learn
     reward_hole = -0.01
 
-    # we generate 10 000 episodes in order to give agent chance to reach the goal
+    # generate 10 000 episodes in order to give agent chance to reach the goal
     max_episodes = 10000   
 
     # every episode should have 2000 iterations (agent can take 2000 steps in the map)
@@ -118,7 +118,7 @@ def rl_agent(problem_id):
 
         results.append([e, iter+1, int(reward)])
 
-    # Here we compute the policy
+    # Compute the policy
     policy = {}
 
     for state_action, value in list(q_agent.Q.items()):
@@ -134,7 +134,7 @@ def rl_agent(problem_id):
 
     np.savetxt('out_rl_{}_policy.txt'.format(problem_id), to_arrows(policy, 8, 8), delimiter="\t", fmt='%s')
 
-    # We add a plot over all 10 000 episodes 
+    # Add a plot over all 10 000 episodes 
     columns = ['episode', 'iterations', 'reward']
 
     dataframe = pd.DataFrame(data=np.array(results), index=np.array(results)[0:,0], columns=columns)
@@ -183,7 +183,7 @@ def rl_agent(problem_id):
 
     return dataframe
 
-# We guarantee that the problem ID is within the allowed bound [0, 7]
+# Guarantee that the problem ID is within the allowed bound [0, 7]
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("usage: run_rl.py <problem_id>")
