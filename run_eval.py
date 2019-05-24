@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from helpers import *
 
 
-# Here we will compare all three agents with each 
+# Compare all three agents with each other
 def main(problem_id):
 
     random_dataframe = random_agent(problem_id)
@@ -30,7 +30,7 @@ def main(problem_id):
     plt.savefig(filename)
     plt.close()
 
-# We guarantee that the problem ID is within the allowed bound [0, 7]
+# Guarantee that the problem ID is within the allowed bound [0, 7]
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("usage: run_rl.py <problem_id>")
