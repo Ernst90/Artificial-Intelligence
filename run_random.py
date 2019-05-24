@@ -7,13 +7,13 @@ import itertools
 import operator  
 from utils import print_table
 
-# We define the random agent and apply it to all task environment ID's
+# Define the random agent and apply it to all task environment ID's
 def random_agent(problem_id):
 
-    # should be less than or equal to 0.0, we select 0 because reaching goal state is hard enough for random agent
+    # should be less than or equal to 0.0, select 0 because reaching goal state is hard enough for random agent
     reward_hole = 0.0
 
-    # we generate 10 000 episodes in order to give agent chance to reach the goal multiple times
+    # generate 10 000 episodes in order to give agent chance to reach the goal multiple times
     max_episodes = 10000   
 
     # every episode should have 2000 iterations (agent can take 2000 steps in the map)
@@ -27,7 +27,7 @@ def random_agent(problem_id):
 
     for e in range(max_episodes): # iterate over total number of possible episodes
         
-        # Reset the random generator to known state (probability needs to adapt)
+        # reset the random generator to known state (probability needs to adapt)
         np.random.seed(e)
 
         observation = env.reset() # reset the state of the environment to starting state S     
@@ -81,7 +81,7 @@ def random_agent(problem_id):
 
     return dataframe
  
-# We guarantee that the problem ID is within the allowed bound [0, 7]
+# Guarantee that the problem ID is within the allowed bound [0, 7]
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("usage: run_rl.py <problem_id>")
