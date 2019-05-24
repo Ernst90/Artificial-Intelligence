@@ -4,7 +4,6 @@ from search import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 def get_action_from_location(previous, current):
 
     # down
