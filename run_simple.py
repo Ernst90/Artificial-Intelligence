@@ -7,13 +7,13 @@ import itertools
 import operator  
 from search import *
 
-# We define the simple agent (A*) and apply it to all task environment ID's
+# Define the simple agent (A*) and apply it to all task environment ID's
 def simple_agent(problem_id):
 
     # since A*star agent is fully informed, any negative reward for hole would not make a difference, hence we chose 0
     reward_hole = 0.0
 
-    # we generate 10 000 episodes in order to give agent chance to reach the goal multiple times
+    # generate 10 000 episodes in order to give agent chance to reach the goal multiple times
     max_episodes = 10000   
 
     # since A*star agent always wins, lower limit for allowed iterations per episode to 100 (time constraint)
@@ -99,7 +99,7 @@ def simple_agent(problem_id):
 
     return dataframe
 
-# We guarantee that the problem ID is within the allowed bound [0, 7]
+# Guarantee that the problem ID is within the allowed bound [0, 7]
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("usage: run_simple.py <problem_id>")
