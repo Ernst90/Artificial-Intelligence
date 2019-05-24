@@ -5,7 +5,6 @@ import sys
 import matplotlib.pyplot as plt
 from helpers import *
 
-
 # Compare all three agents with each other
 def main(problem_id):
 
