@@ -1,6 +1,6 @@
 # Artificial-Intelligence
 
-Implementation of following three agents:
+Implementation of the following three agents:
 
 1) Senseless / Random agent (probabilistic actions)
 2) Simple Agent (A*Algorithm)
